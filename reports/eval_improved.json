@@ -20,9 +20,9 @@
     "questions": 30,
     "unanswerable": 3,
     "pass_bar_met": true,
-    "mean_retrieval_ms": 5.4
+    "mean_retrieval_ms": 3.3
   },
-  "wall_seconds": 85.2,
+  "wall_seconds": 82.3,
   "rows": [
     {
       "id": "Q01",
@@ -37,7 +37,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 9.4,
+      "retrieval_ms": 5.1,
       "retrieved": [
         {
           "rank": 1,
@@ -97,7 +97,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 4.7,
+      "retrieval_ms": 4.2,
       "retrieved": [
         {
           "rank": 1,
@@ -159,7 +159,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 4.8,
+      "retrieval_ms": 2.9,
       "retrieved": [
         {
           "rank": 1,
@@ -220,7 +220,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.4,
+      "retrieval_ms": 5.9,
       "retrieved": [
         {
           "rank": 1,
@@ -281,7 +281,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.8,
+      "retrieval_ms": 2.4,
       "retrieved": [
         {
           "rank": 1,
@@ -347,7 +347,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.7,
+      "retrieval_ms": 2.9,
       "retrieved": [
         {
           "rank": 1,
@@ -408,7 +408,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 4.9,
+      "retrieval_ms": 2.6,
       "retrieved": [
         {
           "rank": 1,
@@ -472,7 +472,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.1,
+      "retrieval_ms": 2.6,
       "retrieved": [
         {
           "rank": 1,
@@ -533,7 +533,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.8,
+      "retrieval_ms": 3.0,
       "retrieved": [
         {
           "rank": 1,
@@ -597,7 +597,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 7.4,
+      "retrieval_ms": 2.6,
       "retrieved": [
         {
           "rank": 1,
@@ -655,7 +655,7 @@
       "cited": [],
       "invalid_citations": [],
       "refused": true,
-      "retrieval_ms": 6.5,
+      "retrieval_ms": 2.2,
       "retrieved": [
         {
           "rank": 1,
@@ -715,7 +715,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.3,
+      "retrieval_ms": 2.4,
       "retrieved": [
         {
           "rank": 1,
@@ -773,37 +773,37 @@
       "cited": [],
       "invalid_citations": [],
       "refused": true,
-      "retrieval_ms": 4.2,
+      "retrieval_ms": 2.4,
       "retrieved": [
         {
           "rank": 1,
+          "source": "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling.",
+          "chunk_index": 0,
+          "score": 0.63763
+        },
+        {
+          "rank": 2,
           "source": "MARK/Projects/Build_Ideas/ghl_contractor_automation.md",
           "chunk_index": 5,
           "score": 0.63467
         },
         {
-          "rank": 2,
+          "rank": 3,
           "source": "MARK/Projects/Build_Ideas/ghl_contractor_automation.md",
           "chunk_index": 4,
           "score": 0.62706
         },
         {
-          "rank": 3,
+          "rank": 4,
           "source": "MARK/Projects/Build_Ideas/utility_allocation_engine.md",
           "chunk_index": 0,
           "score": 0.60991
         },
         {
-          "rank": 4,
+          "rank": 5,
           "source": "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won",
           "chunk_index": 0,
           "score": 0.60591
-        },
-        {
-          "rank": 5,
-          "source": "MARK/Projects/Build_Ideas/utility_allocation_engine.md",
-          "chunk_index": 4,
-          "score": 0.60448
         }
       ],
       "recall_at_5": false,
@@ -813,11 +813,11 @@
       "citation_fact": null,
       "answer_fact": null,
       "retrieved_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling.",
         "MARK/Projects/Build_Ideas/ghl_contractor_automation.md",
         "MARK/Projects/Build_Ideas/ghl_contractor_automation.md",
         "MARK/Projects/Build_Ideas/utility_allocation_engine.md",
-        "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won",
-        "MARK/Projects/Build_Ideas/utility_allocation_engine.md"
+        "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won"
       ]
     },
     {
@@ -833,7 +833,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 7.0,
+      "retrieval_ms": 2.0,
       "retrieved": [
         {
           "rank": 1,
@@ -893,7 +893,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.4,
+      "retrieval_ms": 2.4,
       "retrieved": [
         {
           "rank": 1,
@@ -953,7 +953,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 4.7,
+      "retrieval_ms": 2.4,
       "retrieved": [
         {
           "rank": 1,
@@ -1013,7 +1013,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.1,
+      "retrieval_ms": 1.9,
       "retrieved": [
         {
           "rank": 1,
@@ -1073,7 +1073,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 4.3,
+      "retrieval_ms": 2.4,
       "retrieved": [
         {
           "rank": 1,
@@ -1133,7 +1133,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 4.9,
+      "retrieval_ms": 2.4,
       "retrieved": [
         {
           "rank": 1,
@@ -1193,7 +1193,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.2,
+      "retrieval_ms": 2.1,
       "retrieved": [
         {
           "rank": 1,
@@ -1253,7 +1253,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.1,
+      "retrieval_ms": 5.0,
       "retrieved": [
         {
           "rank": 1,
@@ -1313,7 +1313,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.5,
+      "retrieval_ms": 5.4,
       "retrieved": [
         {
           "rank": 1,
@@ -1367,13 +1367,13 @@
         "WORKING_KNOWLEDGE.md#Rule 7 \u2014 client rating floor."
       ],
       "key_fact": "4.0",
-      "answer": "Rule 7 rejects clients when the rating is below 4.0 and the number of reviews is 10 or more [1].",
+      "answer": "Rule 7 uses a client rating floor of 4.0 for rejection [1].",
       "cited": [
         1
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.1,
+      "retrieval_ms": 4.6,
       "retrieved": [
         {
           "rank": 1,
@@ -1395,15 +1395,15 @@
         },
         {
           "rank": 4,
-          "source": "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling.",
-          "chunk_index": 0,
-          "score": 0.68916
-        },
-        {
-          "rank": 5,
           "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
           "chunk_index": 7,
           "score": 0.68095
+        },
+        {
+          "rank": 5,
+          "source": "WORKING_KNOWLEDGE.md#Rule 11 \u2014 new-client exception.",
+          "chunk_index": 0,
+          "score": 0.68054
         }
       ],
       "recall_at_5": true,
@@ -1416,8 +1416,8 @@
         "WORKING_KNOWLEDGE.md#Rule 7 \u2014 client rating floor.",
         "MARK/Projects/Build_Ideas/content_approval_queue.md",
         "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
-        "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling.",
-        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "WORKING_KNOWLEDGE.md#Rule 11 \u2014 new-client exception."
       ]
     },
     {
@@ -1433,13 +1433,13 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.0,
+      "retrieval_ms": 4.7,
       "retrieved": [
         {
           "rank": 1,
           "source": "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling.",
           "chunk_index": 0,
-          "score": 0.84943
+          "score": 0.85308
         },
         {
           "rank": 2,
@@ -1493,7 +1493,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 4.6,
+      "retrieval_ms": 4.0,
       "retrieved": [
         {
           "rank": 1,
@@ -1553,7 +1553,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 4.9,
+      "retrieval_ms": 4.2,
       "retrieved": [
         {
           "rank": 1,
@@ -1613,13 +1613,13 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.0,
+      "retrieval_ms": 4.3,
       "retrieved": [
         {
           "rank": 1,
           "source": "WORKING_KNOWLEDGE.md#Rule 13 \u2014 red lines: no anti-bot circumvention.",
           "chunk_index": 0,
-          "score": 0.83291
+          "score": 0.82641
         },
         {
           "rank": 2,
@@ -1673,7 +1673,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 4.9,
+      "retrieval_ms": 2.7,
       "retrieved": [
         {
           "rank": 1,
@@ -1685,7 +1685,7 @@
           "rank": 2,
           "source": "WORKING_KNOWLEDGE.md#Rule 13 \u2014 red lines: no anti-bot circumvention.",
           "chunk_index": 0,
-          "score": 0.70395
+          "score": 0.70498
         },
         {
           "rank": 3,
@@ -1733,7 +1733,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 5.1,
+      "retrieval_ms": 4.5,
       "retrieved": [
         {
           "rank": 1,
@@ -1793,7 +1793,7 @@
       ],
       "invalid_citations": [],
       "refused": false,
-      "retrieval_ms": 4.6,
+      "retrieval_ms": 3.0,
       "retrieved": [
         {
           "rank": 1,
@@ -1895,8 +1895,8 @@
     "embedding_model": "nomic-embed-text",
     "chat_model": "qwen2.5:7b",
     "documents": 57,
-    "chunks_structural": 235,
-    "chunks_fixed": 190,
+    "chunks_structural": 236,
+    "chunks_fixed": 191,
     "refusal_token": "NOT IN SOURCES"
   }
 }

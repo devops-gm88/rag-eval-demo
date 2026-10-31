@@ -18,7 +18,7 @@ configuration clears it.
   installs are blocked here. The `Makefile` works with any Postgres 16 + pgvector.
 - `make corpus` built 57 documents (case studies, build specs, working notes), redacted for
   client and personal names.
-- `make ingest` chunked, embedded and loaded **190 fixed chunks** and **235 structural chunks**.
+- `make ingest` chunked, embedded and loaded **191 fixed chunks** and **236 structural chunks**.
   Embeddings from `nomic-embed-text` (768 dims) over local Ollama; answers from `qwen2.5:7b`.
 - `make eval` ran 4 configurations over 33 questions each: **132 generations**.
 - `make report` rendered `reports/eval.html`.
