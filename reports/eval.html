@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAG evaluation report</title>
+<style>
+  :root {
+    --ink: #16181d; --muted: #5f6673; --line: #d9dde3; --wash: #f5f6f8;
+    --ok: #0f6b3d; --bad: #a3231b; --acc: #1f4e79;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #fff; color: var(--ink);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 48px 32px 96px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 20px; margin-bottom: 28px; }
+  .kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 34px; line-height: 1.15; margin: 8px 0 10px; letter-spacing: -0.01em; }
+  h2 { font-size: 20px; margin: 44px 0 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+  p { margin: 0 0 12px; }
+  .muted { color: var(--muted); }
+  .lede { font-size: 17px; max-width: 74ch; }
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0 8px; }
+  .card { border: 1px solid var(--line); padding: 14px 16px; }
+  .card .n { font-size: 28px; font-weight: 650; letter-spacing: -0.02em; }
+  .card .l { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0 8px; font-size: 13.5px; }
+  th { text-align: left; font-size: 11px; letter-spacing: .07em; text-transform: uppercase;
+        color: var(--muted); border-bottom: 1px solid var(--ink); padding: 8px 8px; font-weight: 600; }
+  td { border-bottom: 1px solid var(--line); padding: 8px; vertical-align: top; }
+  tr:hover td { background: var(--wash); }
+  td.name { font-weight: 600; }
+  td.strong { font-weight: 700; }
+  .pct { display: block; color: var(--muted); font-size: 11px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+  .fact { color: var(--acc); }
+  .ok { color: var(--ok); }
+  .bad { color: var(--bad); }
+  .checks i { font-style: normal; font-weight: 700; font-size: 11px; padding: 1px 3px;
+               border: 1px solid currentColor; }
+  .checks i.bad { opacity: .85; }
+  .answer { font-size: 12.5px; color: var(--muted); max-width: 34ch; }
+  .sources { font-size: 11.5px; color: var(--muted); }
+  ul.delta { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 24px; }
+  ul.delta li { border-left: 2px solid var(--ink); padding-left: 10px; }
+  ul.notes { color: var(--muted); font-size: 13px; margin-top: 10px; }
+  .note { border-left: 3px solid var(--ink); background: var(--wash); padding: 12px 16px; margin: 18px 0; }
+  footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 14px;
+            color: var(--muted); font-size: 12px; }
+  @media print { body { font-size: 11px; } .wrap { padding: 0; } h2 { break-after: avoid; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Retrieval-augmented generation · evaluation report</div>
+    <h1>30 questions, four configurations, one refusal bar</h1>
+    <p class="lede">A corpus of 57 documents, indexed two ways.
+    Every question is scored on retrieval recall@5, citation correctness, answer completeness and
+    refusal accuracy. Generated 2026-10-31 07:35.</p>
+  </header>
+
+  <div class="cards">
+    <div class="card"><div class="n">25 / 30</div><div class="l">Baseline passed</div></div>
+    <div class="card"><div class="n">27 / 30</div><div class="l">Improved passed</div></div>
+    <div class="card"><div class="n">+2</div><div class="l">Delta</div></div>
+    <div class="card"><div class="n">3 / 3</div><div class="l">Refusals correct</div></div>
+  </div>
+
+  <h2>Every configuration</h2>
+  <p class="muted">Pass bar: at least 26 of 30 answered correctly and 3 of 3 refusals.
+  R = an expected source is in the top five chunks. C = a cited chunk contains the key fact.
+  A = the answer contains the key fact.</p>
+  <table>
+    <thead><tr><th>Configuration</th><th>Recall@5</th><th>Citations</th><th>Complete</th><th>Passed</th><th>Refusals</th><th>Bar</th></tr></thead>
+    <tbody><tr>
+              <td class="name">Baseline — fixed chunks, vector only</td>
+              <td>28 / 30<span class="pct">93%</span></td>
+              <td>25 / 30<span class="pct">83%</span></td>
+              <td>26 / 30<span class="pct">87%</span></td>
+              <td class="strong">25 / 30</td>
+              <td>3 / 3</td>
+              <td class="bad">FAIL</td>
+            </tr>
+<tr>
+              <td class="name">Fixed chunks + full-text hybrid</td>
+              <td>28 / 30<span class="pct">93%</span></td>
+              <td>26 / 30<span class="pct">87%</span></td>
+              <td>26 / 30<span class="pct">87%</span></td>
+              <td class="strong">25 / 30</td>
+              <td>3 / 3</td>
+              <td class="bad">FAIL</td>
+            </tr>
+<tr>
+              <td class="name">Structural chunks + vector only</td>
+              <td>28 / 30<span class="pct">93%</span></td>
+              <td>27 / 30<span class="pct">90%</span></td>
+              <td>27 / 30<span class="pct">90%</span></td>
+              <td class="strong">27 / 30</td>
+              <td>3 / 3</td>
+              <td class="ok">PASS</td>
+            </tr>
+<tr>
+              <td class="name">Improved — structural chunks + full-text hybrid</td>
+              <td>28 / 30<span class="pct">93%</span></td>
+              <td>27 / 30<span class="pct">90%</span></td>
+              <td>27 / 30<span class="pct">90%</span></td>
+              <td class="strong">27 / 30</td>
+              <td>3 / 3</td>
+              <td class="ok">PASS</td>
+            </tr></tbody>
+  </table>
+
+  <h2>Baseline to improved</h2>
+  <ul class='delta'><li>Questions passed: <b>25 → 27</b> <span class='delta'>(+2)</span></li><li>Retrieval recall@5: <b>28 → 28</b> <span class='delta'>(+0)</span></li><li>Citation correctness: <b>25 → 27</b> <span class='delta'>(+2)</span></li><li>Answer completeness: <b>26 → 27</b> <span class='delta'>(+1)</span></li><li>Refusals correct: <b>3 → 3</b> <span class='delta'>(+0)</span></li></ul><ul class='notes'><li>Structural chunking alone, vector only: <b>27 / 30</b> passed (recall 28, citation 27, complete 27).</li><li>Full-text hybrid alone, fixed chunks: <b>25 / 30</b> passed (recall 28, citation 26, complete 26).</li></ul>
+
+  <h2>Question by question</h2>
+  <table>
+    <thead><tr><th>ID</th><th>Question</th><th>Key fact</th><th>Baseline</th><th>Improved</th><th>Improved</th></tr></thead>
+    <tbody><tr>
+              <td class="mono">Q01</td>
+              <td>What materiality threshold did reconciliation run RC-778025 use?</td>
+              <td class="mono fact">50 CAD</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q02</td>
+              <td>How many ledger rows did run RC-778025 compare against how many source rows?</td>
+              <td class="mono fact">41 ledger rows against 40 source rows</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q03</td>
+              <td>How many findings did the reconciliation run produce, and of which kinds?</td>
+              <td class="mono fact">Five findings</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q04</td>
+              <td>Which rule catches a reference that appears more than once in the ledger?</td>
+              <td class="mono fact">duplicate_ledger</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q05</td>
+              <td>What batch identifier did the verified research demo run use?</td>
+              <td class="mono fact">RB-470309</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q06</td>
+              <td>How many rows did the research batch verify, and how many did it flag as exceptions?</td>
+              <td class="mono fact">52 verified</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q07</td>
+              <td>What minimum source quality did the research brief require?</td>
+              <td class="mono fact">company website, dated in the last 90 days</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q08</td>
+              <td>How many of the five invoice cases were approved automatically?</td>
+              <td class="mono fact">2 of 5</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q09</td>
+              <td>Which model runs the AI step in the invoice approval workflow?</td>
+              <td class="mono fact">qwen2.5:7b</td>
+              <td class="checks"><i class='ok'>R</i> <i class='bad'>C</i> <i class='bad'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='bad'>C</i> <i class='bad'>A</i></td>
+              <td class="bad">fail</td>
+            </tr>
+<tr>
+              <td class="mono">Q10</td>
+              <td>How many of the five invoice cases were stopped for human review?</td>
+              <td class="mono fact">3 of 5</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q11</td>
+              <td>What delivery shape does the first invoice approval option use?</td>
+              <td class="mono fact">One flow, one approver, 2 weeks</td>
+              <td class="checks"><i class='bad'>R</i> <i class='bad'>C</i> <i class='bad'>A</i></td>
+              <td class="checks"><i class='bad'>R</i> <i class='bad'>C</i> <i class='bad'>A</i></td>
+              <td class="bad">fail</td>
+            </tr>
+<tr>
+              <td class="mono">Q12</td>
+              <td>How many agency channels did the verified scraper run scan with yt-dlp?</td>
+              <td class="mono fact">17 agency channels</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q13</td>
+              <td>What average hourly rate did the Berlin energy-management client show?</td>
+              <td class="mono fact">$35.28/hr</td>
+              <td class="checks"><i class='bad'>R</i> <i class='bad'>C</i> <i class='bad'>A</i></td>
+              <td class="checks"><i class='bad'>R</i> <i class='bad'>C</i> <i class='bad'>A</i></td>
+              <td class="bad">fail</td>
+            </tr>
+<tr>
+              <td class="mono">Q14</td>
+              <td>How many Chinese food manufacturers did the B2B buyer database brief ask for?</td>
+              <td class="mono fact">750 Chinese food manufacturers</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q15</td>
+              <td>What was the client lifetime spend on the rejected cash flow automation job?</td>
+              <td class="mono fact">$2.6K</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q16</td>
+              <td>How many proposals did the creator research pilot job have?</td>
+              <td class="mono fact">50+ proposals</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q17</td>
+              <td>What was the fixed budget for the podcast and media database data quality job?</td>
+              <td class="mono fact">$250 fixed</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q18</td>
+              <td>What was the bid average for the YouTube market research job?</td>
+              <td class="mono fact">$14.32</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q19</td>
+              <td>How many jobs had the transcript client posted?</td>
+              <td class="mono fact">1,245 jobs posted</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q20</td>
+              <td>What price range can the GBP optimisation service be delivered at?</td>
+              <td class="mono fact">$50-100/project</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q21</td>
+              <td>What candidate number does the photo-to-cart build hold on the board?</td>
+              <td class="mono fact">Candidate #12</td>
+              <td class="checks"><i class='ok'>R</i> <i class='bad'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q22</td>
+              <td>What budget did the AI lead-qualification SaaS brief carry?</td>
+              <td class="mono fact">$1,500 fixed</td>
+              <td class="checks"><i class='ok'>R</i> <i class='bad'>C</i> <i class='bad'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q23</td>
+              <td>What rating does Rule 7 use as the client floor for rejection?</td>
+              <td class="mono fact">4.0</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q24</td>
+              <td>What multiple of the client&#x27;s average hourly rate does Rule 9 cap a bid at?</td>
+              <td class="mono fact">2x</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q25</td>
+              <td>How long is the edit window on a submitted proposal under Rule 10?</td>
+              <td class="mono fact">6-hour edit window</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q26</td>
+              <td>How many conditions must hold before Rule 11 allows a bid to a zero-spend client?</td>
+              <td class="mono fact">all four</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q27</td>
+              <td>Which US law does Rule 13 cite against ticket-buying bots?</td>
+              <td class="mono fact">BOTS Act</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q28</td>
+              <td>What does Rule 14 forbid a freelancer to expose to a client test?</td>
+              <td class="mono fact">bank details</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q29</td>
+              <td>How many tests does the mcp-validation-server project have?</td>
+              <td class="mono fact">139 tests</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr>
+<tr>
+              <td class="mono">Q30</td>
+              <td>How many client records were in scope for the Playwright browser automation contract?</td>
+              <td class="mono fact">3,159 clients</td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="checks"><i class='ok'>R</i> <i class='ok'>C</i> <i class='ok'>A</i></td>
+              <td class="ok">pass</td>
+            </tr></tbody>
+  </table>
+
+  <h2>Refusals</h2>
+  <p class="muted">Three questions the corpus cannot answer. The correct answer is <b>NOT IN SOURCES</b>.
+  A model that guesses fails these.</p>
+
+  <h2>Failure report — improved configuration</h2>
+  <table>
+    <thead><tr><th>ID</th><th>Question</th><th>Key fact</th><th>Cause</th><th>Answer</th><th>Top sources</th></tr></thead>
+    <tbody><tr>
+              <td class="mono">Q09</td>
+              <td>Which model runs the AI step in the invoice approval workflow?</td>
+              <td class="mono fact">qwen2.5:7b</td>
+              <td>the cited chunk does not hold the key fact; the answer omits the key fact</td>
+              <td class="answer">A local AI agent adjudicates and explains the invoice approval step [1].</td>
+              <td class="sources">case_study_invoice_gate.pdf, CASE_STUDY_Invoice_Approval_Gate.html, case_study_invoice_gate.pdf</td>
+            </tr>
+<tr>
+              <td class="mono">Q11</td>
+              <td>What delivery shape does the first invoice approval option use?</td>
+              <td class="mono fact">One flow, one approver, 2 weeks</td>
+              <td>retrieval missed the expected source; the cited chunk does not hold the key fact; the answer omits the key fact</td>
+              <td class="answer">NOT IN SOURCES</td>
+              <td class="sources">CASE_STUDY_Invoice_Approval_Gate.html, CASE_STUDY_Invoice_Approval_Gate.html#Evidence — from runs, not a mock-up, case_study_invoice_gate.pdf</td>
+            </tr>
+<tr>
+              <td class="mono">Q13</td>
+              <td>What average hourly rate did the Berlin energy-management client show?</td>
+              <td class="mono fact">$35.28/hr</td>
+              <td>retrieval missed the expected source; the cited chunk does not hold the key fact; the answer omits the key fact</td>
+              <td class="answer">NOT IN SOURCES</td>
+              <td class="sources">ghl_contractor_automation.md, ghl_contractor_automation.md, utility_allocation_engine.md</td>
+            </tr></tbody>
+  </table>
+
+  <div class="note">
+    <b>How to read the delta.</b> Each configuration changes one thing at a time. The intermediate rows
+    separate the effect of structural chunking from the effect of full-text hybrid retrieval. A component
+    that does not move the pass count is not kept.
+  </div>
+
+  <footer>
+    Embedding model: nomic-embed-text (235 structural chunks,
+    190 fixed chunks).
+    Answer model: qwen2.5:7b. Temperature 0.
+    Corpus and eval set are property of the author. The harness, the questions and the scoring rules are the artefact.
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,397 @@
+{
+  "version": "1.0",
+  "built": "2026-10-31",
+  "description": "30 answerable questions and 3 unanswerable questions over the 57-document corpus.",
+  "matching_rule": "A key fact matches when its normalised text appears in the answer or in the cited chunk. Aliases cover surface variants. Normalisation lowercases, strips $ and thousands commas, and collapses whitespace.",
+  "answerable": [
+    {
+      "id": "Q01",
+      "question": "What materiality threshold did reconciliation run RC-778025 use?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run"
+      ],
+      "key_fact": "50 CAD",
+      "aliases": [
+        "50 cad",
+        "50.00 cad"
+      ]
+    },
+    {
+      "id": "Q02",
+      "question": "How many ledger rows did run RC-778025 compare against how many source rows?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run"
+      ],
+      "key_fact": "41 ledger rows against 40 source rows",
+      "aliases": [
+        "41 ledger rows",
+        "41 against 40"
+      ]
+    },
+    {
+      "id": "Q03",
+      "question": "How many findings did the reconciliation run produce, and of which kinds?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Every finding has a rule"
+      ],
+      "key_fact": "Five findings",
+      "aliases": [
+        "five findings",
+        "5 findings"
+      ]
+    },
+    {
+      "id": "Q04",
+      "question": "Which rule catches a reference that appears more than once in the ledger?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Every finding has a rule",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html"
+      ],
+      "key_fact": "duplicate_ledger",
+      "aliases": [
+        "duplicate ledger"
+      ]
+    },
+    {
+      "id": "Q05",
+      "question": "What batch identifier did the verified research demo run use?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf"
+      ],
+      "key_fact": "RB-470309",
+      "aliases": [
+        "rb 470309",
+        "rb470309"
+      ]
+    },
+    {
+      "id": "Q06",
+      "question": "How many rows did the research batch verify, and how many did it flag as exceptions?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#The rules, in code"
+      ],
+      "key_fact": "52 verified",
+      "aliases": [
+        "52 verified plus 8 exceptions",
+        "52 rows verified",
+        "verified 52"
+      ]
+    },
+    {
+      "id": "Q07",
+      "question": "What minimum source quality did the research brief require?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf"
+      ],
+      "key_fact": "company website, dated in the last 90 days",
+      "aliases": [
+        "company website",
+        "last 90 days"
+      ]
+    },
+    {
+      "id": "Q08",
+      "question": "How many of the five invoice cases were approved automatically?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf"
+      ],
+      "key_fact": "2 of 5",
+      "aliases": [
+        "2 of 5 cases",
+        "two of five",
+        "2 of the 5",
+        "two of the five"
+      ]
+    },
+    {
+      "id": "Q09",
+      "question": "Which model runs the AI step in the invoice approval workflow?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Why it is cheap to run",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf"
+      ],
+      "key_fact": "qwen2.5:7b",
+      "aliases": [
+        "qwen2.5 7b",
+        "qwen 2.5 7b"
+      ]
+    },
+    {
+      "id": "Q10",
+      "question": "How many of the five invoice cases were stopped for human review?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf"
+      ],
+      "key_fact": "3 of 5",
+      "aliases": [
+        "3 of 5 cases",
+        "three of five"
+      ]
+    },
+    {
+      "id": "Q11",
+      "question": "What delivery shape does the first invoice approval option use?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Options"
+      ],
+      "key_fact": "One flow, one approver, 2 weeks",
+      "aliases": [
+        "one flow",
+        "2 weeks"
+      ]
+    },
+    {
+      "id": "Q12",
+      "question": "How many agency channels did the verified scraper run scan with yt-dlp?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/PROMPT_scraper_relevance_upgrade.md"
+      ],
+      "key_fact": "17 agency channels",
+      "aliases": [
+        "17 channels"
+      ]
+    },
+    {
+      "id": "Q13",
+      "question": "What average hourly rate did the Berlin energy-management client show?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/analytics_layer_dbt_postgres.md"
+      ],
+      "key_fact": "$35.28/hr",
+      "aliases": [
+        "35.28",
+        "35.28 an hour"
+      ]
+    },
+    {
+      "id": "Q14",
+      "question": "How many Chinese food manufacturers did the B2B buyer database brief ask for?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md"
+      ],
+      "key_fact": "750 Chinese food manufacturers",
+      "aliases": [
+        "750 manufacturers",
+        "750"
+      ]
+    },
+    {
+      "id": "Q15",
+      "question": "What was the client lifetime spend on the rejected cash flow automation job?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/cash_flow_control_system.md"
+      ],
+      "key_fact": "$2.6K",
+      "aliases": [
+        "2.6k",
+        "2,600"
+      ]
+    },
+    {
+      "id": "Q16",
+      "question": "How many proposals did the creator research pilot job have?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md"
+      ],
+      "key_fact": "50+ proposals",
+      "aliases": [
+        "50+",
+        "over 50 proposals"
+      ]
+    },
+    {
+      "id": "Q17",
+      "question": "What was the fixed budget for the podcast and media database data quality job?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/data_quality_entity_resolution.md"
+      ],
+      "key_fact": "$250 fixed",
+      "aliases": [
+        "250 fixed",
+        "$250"
+      ]
+    },
+    {
+      "id": "Q18",
+      "question": "What was the bid average for the YouTube market research job?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/youtube_outlier_research_engine.md"
+      ],
+      "key_fact": "$14.32",
+      "aliases": [
+        "14.32"
+      ]
+    },
+    {
+      "id": "Q19",
+      "question": "How many jobs had the transcript client posted?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/transcript_and_redaction_pipeline.md"
+      ],
+      "key_fact": "1,245 jobs posted",
+      "aliases": [
+        "1245 jobs",
+        "1,245"
+      ]
+    },
+    {
+      "id": "Q20",
+      "question": "What price range can the GBP optimisation service be delivered at?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/gbp_optimization_service.md"
+      ],
+      "key_fact": "$50-100/project",
+      "aliases": [
+        "50-100",
+        "50 to 100"
+      ]
+    },
+    {
+      "id": "Q21",
+      "question": "What candidate number does the photo-to-cart build hold on the board?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/photo_to_cart.md"
+      ],
+      "key_fact": "Candidate #12",
+      "aliases": [
+        "candidate 12",
+        "#12"
+      ]
+    },
+    {
+      "id": "Q22",
+      "question": "What budget did the AI lead-qualification SaaS brief carry?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/ai_lead_qualification.md"
+      ],
+      "key_fact": "$1,500 fixed",
+      "aliases": [
+        "1,500 fixed",
+        "1500 fixed",
+        "$1,500"
+      ]
+    },
+    {
+      "id": "Q23",
+      "question": "What rating does Rule 7 use as the client floor for rejection?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 7 \u2014 client rating floor."
+      ],
+      "key_fact": "4.0",
+      "aliases": [
+        "below 4.0",
+        "under 4.0"
+      ]
+    },
+    {
+      "id": "Q24",
+      "question": "What multiple of the client's average hourly rate does Rule 9 cap a bid at?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling."
+      ],
+      "key_fact": "2x",
+      "aliases": [
+        "twice",
+        "2 times",
+        "two times"
+      ]
+    },
+    {
+      "id": "Q25",
+      "question": "How long is the edit window on a submitted proposal under Rule 10?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 10 \u2014 a submitted proposal is final."
+      ],
+      "key_fact": "6-hour edit window",
+      "aliases": [
+        "6 hour edit window",
+        "six-hour window",
+        "6 hours"
+      ]
+    },
+    {
+      "id": "Q26",
+      "question": "How many conditions must hold before Rule 11 allows a bid to a zero-spend client?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 11 \u2014 new-client exception."
+      ],
+      "key_fact": "all four",
+      "aliases": [
+        "four conditions",
+        "all 4"
+      ]
+    },
+    {
+      "id": "Q27",
+      "question": "Which US law does Rule 13 cite against ticket-buying bots?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 13 \u2014 red lines: no anti-bot circumvention."
+      ],
+      "key_fact": "BOTS Act",
+      "aliases": [
+        "bots act of 2016",
+        "us bots act"
+      ]
+    },
+    {
+      "id": "Q28",
+      "question": "What does Rule 14 forbid a freelancer to expose to a client test?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 14 \u2014 never expose your own bank details, identity papers or payment rails to a client \"test\"."
+      ],
+      "key_fact": "bank details",
+      "aliases": [
+        "bank details, identity papers or payment rails",
+        "payment rails"
+      ]
+    },
+    {
+      "id": "Q29",
+      "question": "How many tests does the mcp-validation-server project have?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#4. What is verified we can do"
+      ],
+      "key_fact": "139 tests",
+      "aliases": [
+        "139"
+      ]
+    },
+    {
+      "id": "Q30",
+      "question": "How many client records were in scope for the Playwright browser automation contract?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#4. What is verified we can do"
+      ],
+      "key_fact": "3,159 clients",
+      "aliases": [
+        "3159 clients",
+        "3,159"
+      ]
+    }
+  ],
+  "unanswerable": [
+    {
+      "id": "U01",
+      "question": "What is the annual revenue of the invoice approval client?",
+      "why": "The corpus describes the workflow and demo runs. No client financials appear."
+    },
+    {
+      "id": "U02",
+      "question": "What uptime SLA does the verified research pipeline guarantee?",
+      "why": "The corpus describes demo batches. No service level is stated."
+    },
+    {
+      "id": "U03",
+      "question": "How many invoices has the system processed in production?",
+      "why": "The corpus records 5 demo cases. No production volume appears."
+    }
+  ]
+}

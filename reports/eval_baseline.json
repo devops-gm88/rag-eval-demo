@@ -1,0 +1,1894 @@
+{
+  "config": "baseline",
+  "chunking": "fixed",
+  "retrieval_mode": "vector",
+  "models": {
+    "embedding": "nomic-embed-text",
+    "chat": "qwen2.5:7b"
+  },
+  "top_k": 5,
+  "pass_bar": {
+    "answered": 26,
+    "refusals": 3
+  },
+  "totals": {
+    "recall_at_5": 28,
+    "citation_correct": 25,
+    "answer_complete": 26,
+    "passed": 25,
+    "refusals_correct": 3,
+    "questions": 30,
+    "unanswerable": 3,
+    "pass_bar_met": false,
+    "mean_retrieval_ms": 4.3
+  },
+  "wall_seconds": 299.9,
+  "rows": [
+    {
+      "id": "Q01",
+      "question": "What materiality threshold did reconciliation run RC-778025 use?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run"
+      ],
+      "key_fact": "50 CAD",
+      "answer": "Reconciliation run RC-778025 used a materiality threshold of 50 CAD [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 2.5,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run",
+          "chunk_index": 0,
+          "score": 0.67878
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html",
+          "chunk_index": 0,
+          "score": 0.6741
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#The brief",
+          "chunk_index": 0,
+          "score": 0.64361
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/revenue_recognition_engine.md",
+          "chunk_index": 3,
+          "score": 0.64001
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/data_quality_entity_resolution.md",
+          "chunk_index": 3,
+          "score": 0.63687
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "50 CAD",
+      "answer_fact": "50 CAD",
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#The brief",
+        "MARK/Projects/Build_Ideas/revenue_recognition_engine.md",
+        "MARK/Projects/Build_Ideas/data_quality_entity_resolution.md"
+      ]
+    },
+    {
+      "id": "Q02",
+      "question": "How many ledger rows did run RC-778025 compare against how many source rows?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run"
+      ],
+      "key_fact": "41 ledger rows against 40 source rows",
+      "answer": "Run RC-778025 compared 41 ledger rows against 40 source rows [2].",
+      "cited": [
+        2
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 5.0,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Every finding has a rule",
+          "chunk_index": 0,
+          "score": 0.75278
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run",
+          "chunk_index": 0,
+          "score": 0.72628
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+          "chunk_index": 0,
+          "score": 0.68235
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html",
+          "chunk_index": 0,
+          "score": 0.66836
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 8,
+          "score": 0.6315
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "41 ledger rows against 40 source rows",
+      "answer_fact": "41 ledger rows against 40 source rows",
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Every finding has a rule",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    },
+    {
+      "id": "Q03",
+      "question": "How many findings did the reconciliation run produce, and of which kinds?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Every finding has a rule"
+      ],
+      "key_fact": "Five findings",
+      "answer": "The reconciliation run produced five findings: one duplicate, one ledger-only, one source-only, one amount mismatch, and one stale source. [3]",
+      "cited": [
+        3
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 4.4,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html",
+          "chunk_index": 0,
+          "score": 0.7527
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/data_quality_entity_resolution.md",
+          "chunk_index": 3,
+          "score": 0.69202
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run",
+          "chunk_index": 0,
+          "score": 0.64579
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 9,
+          "score": 0.64487
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 8,
+          "score": 0.63344
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "Five findings",
+      "answer_fact": "Five findings",
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html",
+        "MARK/Projects/Build_Ideas/data_quality_entity_resolution.md",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    },
+    {
+      "id": "Q04",
+      "question": "Which rule catches a reference that appears more than once in the ledger?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Every finding has a rule",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html"
+      ],
+      "key_fact": "duplicate_ledger",
+      "answer": "The rule that catches a reference appearing more than once in the ledger is [1] duplicate_ledger.",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.4,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Every finding has a rule",
+          "chunk_index": 0,
+          "score": 0.78076
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#The brief",
+          "chunk_index": 0,
+          "score": 0.69692
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run",
+          "chunk_index": 0,
+          "score": 0.69345
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 1,
+          "score": 0.68176
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/utility_allocation_engine.md",
+          "chunk_index": 1,
+          "score": 0.67902
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "duplicate_ledger",
+      "answer_fact": "duplicate_ledger",
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Every finding has a rule",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#The brief",
+        "MARK/Projects/Job_Search/n8n_demo/recon/CASE_STUDY_Reconciliation_Audit.html#Evidence from the demo run",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/utility_allocation_engine.md"
+      ]
+    },
+    {
+      "id": "Q05",
+      "question": "What batch identifier did the verified research demo run use?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf"
+      ],
+      "key_fact": "RB-470309",
+      "answer": "The verified research demo run used batch identifier RB-470309. [3]",
+      "cited": [
+        3
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 4.5,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+          "chunk_index": 0,
+          "score": 0.75264
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html",
+          "chunk_index": 0,
+          "score": 0.74174
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+          "chunk_index": 0,
+          "score": 0.73285
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+          "chunk_index": 1,
+          "score": 0.69819
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 33,
+          "score": 0.69785
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "RB-470309",
+      "answer_fact": "RB-470309",
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html",
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    },
+    {
+      "id": "Q06",
+      "question": "How many rows did the research batch verify, and how many did it flag as exceptions?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#The rules, in code"
+      ],
+      "key_fact": "52 verified",
+      "answer": "The research batch verified 52 rows and flagged 8 as exceptions [2, 4].",
+      "cited": [
+        2,
+        4
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 6.4,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+          "chunk_index": 0,
+          "score": 0.77662
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+          "chunk_index": 0,
+          "score": 0.75913
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+          "chunk_index": 1,
+          "score": 0.74908
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#The rules, in code",
+          "chunk_index": 0,
+          "score": 0.7393
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html",
+          "chunk_index": 0,
+          "score": 0.73338
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "52 verified",
+      "answer_fact": "verified 52",
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#The rules, in code",
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html"
+      ]
+    },
+    {
+      "id": "Q07",
+      "question": "What minimum source quality did the research brief require?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf"
+      ],
+      "key_fact": "company website, dated in the last 90 days",
+      "answer": "The research brief required a minimum source quality of \"company website, dated in the last 90 days\" [4].",
+      "cited": [
+        4
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 4.9,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#The brief",
+          "chunk_index": 0,
+          "score": 0.69028
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/trade_verification_document_engine.md",
+          "chunk_index": 4,
+          "score": 0.67587
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/trade_verification_document_engine.md",
+          "chunk_index": 3,
+          "score": 0.65917
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+          "chunk_index": 0,
+          "score": 0.65774
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md",
+          "chunk_index": 2,
+          "score": 0.65132
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "company website, dated in the last 90 days",
+      "answer_fact": "company website, dated in the last 90 days",
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#The brief",
+        "MARK/Projects/Build_Ideas/trade_verification_document_engine.md",
+        "MARK/Projects/Build_Ideas/trade_verification_document_engine.md",
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run",
+        "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md"
+      ]
+    },
+    {
+      "id": "Q08",
+      "question": "How many of the five invoice cases were approved automatically?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf"
+      ],
+      "key_fact": "2 of 5",
+      "answer": "2 of the 5 cases were approved automatically [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 4.0,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+          "chunk_index": 0,
+          "score": 0.7394
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html",
+          "chunk_index": 0,
+          "score": 0.72419
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+          "chunk_index": 0,
+          "score": 0.71091
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/content_approval_queue.md",
+          "chunk_index": 2,
+          "score": 0.65953
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/trade_verification_document_engine.md",
+          "chunk_index": 3,
+          "score": 0.65091
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "2 of 5",
+      "answer_fact": "2 of 5",
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+        "MARK/Projects/Build_Ideas/content_approval_queue.md",
+        "MARK/Projects/Build_Ideas/trade_verification_document_engine.md"
+      ]
+    },
+    {
+      "id": "Q09",
+      "question": "Which model runs the AI step in the invoice approval workflow?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Why it is cheap to run",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf"
+      ],
+      "key_fact": "qwen2.5:7b",
+      "answer": "The local AI agent adjudicates and explains the decision in the AI step of the invoice approval workflow [4].",
+      "cited": [
+        4
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 4.0,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html",
+          "chunk_index": 0,
+          "score": 0.80301
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+          "chunk_index": 0,
+          "score": 0.78232
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+          "chunk_index": 1,
+          "score": 0.75854
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#What it does",
+          "chunk_index": 0,
+          "score": 0.74999
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/content_approval_queue.md",
+          "chunk_index": 2,
+          "score": 0.71883
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": false,
+      "answer_complete": false,
+      "passed": false,
+      "citation_fact": null,
+      "answer_fact": null,
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#What it does",
+        "MARK/Projects/Build_Ideas/content_approval_queue.md"
+      ]
+    },
+    {
+      "id": "Q10",
+      "question": "How many of the five invoice cases were stopped for human review?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf"
+      ],
+      "key_fact": "3 of 5",
+      "answer": "3 of 5 cases were stopped for human review [1, 2, 3, 4].",
+      "cited": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 5.2,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+          "chunk_index": 0,
+          "score": 0.6624
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html",
+          "chunk_index": 0,
+          "score": 0.65079
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+          "chunk_index": 1,
+          "score": 0.64406
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+          "chunk_index": 0,
+          "score": 0.63893
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/trade_verification_document_engine.md",
+          "chunk_index": 3,
+          "score": 0.62701
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "3 of 5",
+      "answer_fact": "3 of 5",
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+        "MARK/Projects/Build_Ideas/trade_verification_document_engine.md"
+      ]
+    },
+    {
+      "id": "Q11",
+      "question": "What delivery shape does the first invoice approval option use?",
+      "expected_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Options"
+      ],
+      "key_fact": "One flow, one approver, 2 weeks",
+      "answer": "NOT IN SOURCES",
+      "cited": [],
+      "invalid_citations": [],
+      "refused": true,
+      "retrieval_ms": 4.1,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html",
+          "chunk_index": 0,
+          "score": 0.65853
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+          "chunk_index": 0,
+          "score": 0.65677
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/content_approval_queue.md",
+          "chunk_index": 2,
+          "score": 0.63315
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+          "chunk_index": 0,
+          "score": 0.63266
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/content_approval_queue.md",
+          "chunk_index": 3,
+          "score": 0.6313
+        }
+      ],
+      "recall_at_5": false,
+      "citation_correct": false,
+      "answer_complete": false,
+      "passed": false,
+      "citation_fact": null,
+      "answer_fact": null,
+      "retrieved_sources": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html",
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+        "MARK/Projects/Build_Ideas/content_approval_queue.md",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+        "MARK/Projects/Build_Ideas/content_approval_queue.md"
+      ]
+    },
+    {
+      "id": "Q12",
+      "question": "How many agency channels did the verified scraper run scan with yt-dlp?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/PROMPT_scraper_relevance_upgrade.md"
+      ],
+      "key_fact": "17 agency channels",
+      "answer": "The verified scraper run scanned 17 agency channels with yt-dlp. [1]",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 4.8,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/PROMPT_scraper_relevance_upgrade.md",
+          "chunk_index": 0,
+          "score": 0.67812
+        },
+        {
+          "rank": 2,
+          "source": "WORKING_KNOWLEDGE.md#4. What is verified we can do",
+          "chunk_index": 0,
+          "score": 0.66903
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+          "chunk_index": 1,
+          "score": 0.66404
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/content_approval_queue.md",
+          "chunk_index": 4,
+          "score": 0.65074
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 4,
+          "score": 0.64842
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "17 agency channels",
+      "answer_fact": "17 agency channels",
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/PROMPT_scraper_relevance_upgrade.md",
+        "WORKING_KNOWLEDGE.md#4. What is verified we can do",
+        "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+        "MARK/Projects/Build_Ideas/content_approval_queue.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    },
+    {
+      "id": "Q13",
+      "question": "What average hourly rate did the Berlin energy-management client show?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/analytics_layer_dbt_postgres.md"
+      ],
+      "key_fact": "$35.28/hr",
+      "answer": "NOT IN SOURCES",
+      "cited": [],
+      "invalid_citations": [],
+      "refused": true,
+      "retrieval_ms": 3.9,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/ghl_contractor_automation.md",
+          "chunk_index": 3,
+          "score": 0.62275
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/ghl_contractor_automation.md",
+          "chunk_index": 1,
+          "score": 0.61576
+        },
+        {
+          "rank": 3,
+          "source": "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won",
+          "chunk_index": 0,
+          "score": 0.61031
+        },
+        {
+          "rank": 4,
+          "source": "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling.",
+          "chunk_index": 0,
+          "score": 0.60818
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 21,
+          "score": 0.60605
+        }
+      ],
+      "recall_at_5": false,
+      "citation_correct": false,
+      "answer_complete": false,
+      "passed": false,
+      "citation_fact": null,
+      "answer_fact": null,
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/ghl_contractor_automation.md",
+        "MARK/Projects/Build_Ideas/ghl_contractor_automation.md",
+        "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won",
+        "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling.",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    },
+    {
+      "id": "Q14",
+      "question": "How many Chinese food manufacturers did the B2B buyer database brief ask for?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md"
+      ],
+      "key_fact": "750 Chinese food manufacturers",
+      "answer": "The B2B buyer database brief asked for 750 Chinese food manufacturers [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.9,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md",
+          "chunk_index": 0,
+          "score": 0.8173
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md",
+          "chunk_index": 2,
+          "score": 0.7176
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/china_dtc_model_and_1688.md",
+          "chunk_index": 0,
+          "score": 0.71394
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md",
+          "chunk_index": 3,
+          "score": 0.68418
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md",
+          "chunk_index": 4,
+          "score": 0.67097
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "750 Chinese food manufacturers",
+      "answer_fact": "750 Chinese food manufacturers",
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md",
+        "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md",
+        "MARK/Projects/Build_Ideas/china_dtc_model_and_1688.md",
+        "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md",
+        "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md"
+      ]
+    },
+    {
+      "id": "Q15",
+      "question": "What was the client lifetime spend on the rejected cash flow automation job?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/cash_flow_control_system.md"
+      ],
+      "key_fact": "$2.6K",
+      "answer": "The client lifetime spend on the rejected cash flow automation job was $2.6K. [1]",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.9,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/cash_flow_control_system.md",
+          "chunk_index": 0,
+          "score": 0.72569
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 20,
+          "score": 0.6605
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 21,
+          "score": 0.6533
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 0,
+          "score": 0.65233
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/content_approval_queue.md",
+          "chunk_index": 2,
+          "score": 0.65023
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "$2.6K",
+      "answer_fact": "$2.6K",
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/cash_flow_control_system.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/content_approval_queue.md"
+      ]
+    },
+    {
+      "id": "Q16",
+      "question": "How many proposals did the creator research pilot job have?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md"
+      ],
+      "key_fact": "50+ proposals",
+      "answer": "The creator research pilot job had 50+ proposals. [1]",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.0,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md",
+          "chunk_index": 0,
+          "score": 0.75281
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md",
+          "chunk_index": 3,
+          "score": 0.66657
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md",
+          "chunk_index": 2,
+          "score": 0.65331
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md",
+          "chunk_index": 5,
+          "score": 0.6383
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/trade_verification_document_engine.md",
+          "chunk_index": 0,
+          "score": 0.6362
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "50+ proposals",
+      "answer_fact": "50+ proposals",
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md",
+        "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md",
+        "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md",
+        "MARK/Projects/Build_Ideas/b2b_buyer_database_engine.md",
+        "MARK/Projects/Build_Ideas/trade_verification_document_engine.md"
+      ]
+    },
+    {
+      "id": "Q17",
+      "question": "What was the fixed budget for the podcast and media database data quality job?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/data_quality_entity_resolution.md"
+      ],
+      "key_fact": "$250 fixed",
+      "answer": "The fixed budget for the podcast and media database data quality job was $250. [1]",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 4.7,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/data_quality_entity_resolution.md",
+          "chunk_index": 0,
+          "score": 0.71472
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/trade_verification_document_engine.md",
+          "chunk_index": 3,
+          "score": 0.5957
+        },
+        {
+          "rank": 3,
+          "source": "WORKING_KNOWLEDGE.md#Rule 8 \u2014 mandatory paid-service cost check.",
+          "chunk_index": 0,
+          "score": 0.59449
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/youtube_outlier_research_engine.md",
+          "chunk_index": 3,
+          "score": 0.5893
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/gbp_optimization_service.md",
+          "chunk_index": 0,
+          "score": 0.58457
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "$250 fixed",
+      "answer_fact": "$250",
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/data_quality_entity_resolution.md",
+        "MARK/Projects/Build_Ideas/trade_verification_document_engine.md",
+        "WORKING_KNOWLEDGE.md#Rule 8 \u2014 mandatory paid-service cost check.",
+        "MARK/Projects/Build_Ideas/youtube_outlier_research_engine.md",
+        "MARK/Projects/Build_Ideas/gbp_optimization_service.md"
+      ]
+    },
+    {
+      "id": "Q18",
+      "question": "What was the bid average for the YouTube market research job?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/youtube_outlier_research_engine.md"
+      ],
+      "key_fact": "$14.32",
+      "answer": "The bid average for the YouTube market research job was $14.32 [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.9,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/youtube_outlier_research_engine.md",
+          "chunk_index": 0,
+          "score": 0.71028
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/youtube_outlier_research_engine.md",
+          "chunk_index": 3,
+          "score": 0.70372
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md",
+          "chunk_index": 3,
+          "score": 0.67555
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/youtube_outlier_research_engine.md",
+          "chunk_index": 2,
+          "score": 0.66875
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/china_dtc_model_and_1688.md",
+          "chunk_index": 1,
+          "score": 0.63498
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "$14.32",
+      "answer_fact": "$14.32",
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/youtube_outlier_research_engine.md",
+        "MARK/Projects/Build_Ideas/youtube_outlier_research_engine.md",
+        "MARK/Projects/Build_Ideas/creator_prospect_research_engine.md",
+        "MARK/Projects/Build_Ideas/youtube_outlier_research_engine.md",
+        "MARK/Projects/Build_Ideas/china_dtc_model_and_1688.md"
+      ]
+    },
+    {
+      "id": "Q19",
+      "question": "How many jobs had the transcript client posted?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/transcript_and_redaction_pipeline.md"
+      ],
+      "key_fact": "1,245 jobs posted",
+      "answer": "The transcript client had 1,245 jobs posted. [1]",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 12.1,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/transcript_and_redaction_pipeline.md",
+          "chunk_index": 0,
+          "score": 0.68905
+        },
+        {
+          "rank": 2,
+          "source": "WORKING_KNOWLEDGE.md#4. What is verified we can do",
+          "chunk_index": 0,
+          "score": 0.68032
+        },
+        {
+          "rank": 3,
+          "source": "WORKING_KNOWLEDGE.md#8. Where things live",
+          "chunk_index": 0,
+          "score": 0.6442
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 21,
+          "score": 0.62853
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 18,
+          "score": 0.62226
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "1,245 jobs posted",
+      "answer_fact": "1,245 jobs posted",
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/transcript_and_redaction_pipeline.md",
+        "WORKING_KNOWLEDGE.md#4. What is verified we can do",
+        "WORKING_KNOWLEDGE.md#8. Where things live",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    },
+    {
+      "id": "Q20",
+      "question": "What price range can the GBP optimisation service be delivered at?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/gbp_optimization_service.md"
+      ],
+      "key_fact": "$50-100/project",
+      "answer": "The GBP optimization service can be delivered at a price range of $50-100 per project [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.1,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/gbp_optimization_service.md",
+          "chunk_index": 0,
+          "score": 0.66387
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/china_dtc_model_and_1688.md",
+          "chunk_index": 2,
+          "score": 0.61301
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/china_dtc_model_and_1688.md",
+          "chunk_index": 1,
+          "score": 0.59644
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/gbp_optimization_service.md",
+          "chunk_index": 1,
+          "score": 0.59461
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/ai_audit_engine.md",
+          "chunk_index": 0,
+          "score": 0.59211
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "$50-100/project",
+      "answer_fact": "50-100",
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/gbp_optimization_service.md",
+        "MARK/Projects/Build_Ideas/china_dtc_model_and_1688.md",
+        "MARK/Projects/Build_Ideas/china_dtc_model_and_1688.md",
+        "MARK/Projects/Build_Ideas/gbp_optimization_service.md",
+        "MARK/Projects/Build_Ideas/ai_audit_engine.md"
+      ]
+    },
+    {
+      "id": "Q21",
+      "question": "What candidate number does the photo-to-cart build hold on the board?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/photo_to_cart.md"
+      ],
+      "key_fact": "Candidate #12",
+      "answer": "The photo-to-cart build holds Candidate #12 on the board. [4]",
+      "cited": [
+        4
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 5.4,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/photo_to_cart.md",
+          "chunk_index": 0,
+          "score": 0.68998
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/ai_audit_engine.md",
+          "chunk_index": 1,
+          "score": 0.65504
+        },
+        {
+          "rank": 3,
+          "source": "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won",
+          "chunk_index": 1,
+          "score": 0.64774
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/photo_to_cart.md",
+          "chunk_index": 4,
+          "score": 0.64517
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/photo_to_cart.md",
+          "chunk_index": 6,
+          "score": 0.64374
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": false,
+      "answer_complete": true,
+      "passed": false,
+      "citation_fact": null,
+      "answer_fact": "Candidate #12",
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/photo_to_cart.md",
+        "MARK/Projects/Build_Ideas/ai_audit_engine.md",
+        "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won",
+        "MARK/Projects/Build_Ideas/photo_to_cart.md",
+        "MARK/Projects/Build_Ideas/photo_to_cart.md"
+      ]
+    },
+    {
+      "id": "Q22",
+      "question": "What budget did the AI lead-qualification SaaS brief carry?",
+      "expected_sources": [
+        "MARK/Projects/Build_Ideas/ai_lead_qualification.md"
+      ],
+      "key_fact": "$1,500 fixed",
+      "answer": "NOT IN SOURCES",
+      "cited": [],
+      "invalid_citations": [],
+      "refused": true,
+      "retrieval_ms": 2.8,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 22,
+          "score": 0.6583
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 21,
+          "score": 0.65826
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/ai_lead_qualification.md",
+          "chunk_index": 0,
+          "score": 0.64857
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/ai_lead_qualification.md",
+          "chunk_index": 1,
+          "score": 0.64284
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/gbp_optimization_service.md",
+          "chunk_index": 1,
+          "score": 0.63315
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": false,
+      "answer_complete": false,
+      "passed": false,
+      "citation_fact": null,
+      "answer_fact": null,
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/ai_lead_qualification.md",
+        "MARK/Projects/Build_Ideas/ai_lead_qualification.md",
+        "MARK/Projects/Build_Ideas/gbp_optimization_service.md"
+      ]
+    },
+    {
+      "id": "Q23",
+      "question": "What rating does Rule 7 use as the client floor for rejection?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 7 \u2014 client rating floor."
+      ],
+      "key_fact": "4.0",
+      "answer": "Rule 7 uses a client rating floor of < 4.0 and requires the client to have at least 10 reviews [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 2.3,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "WORKING_KNOWLEDGE.md#Rule 7 \u2014 client rating floor.",
+          "chunk_index": 0,
+          "score": 0.86836
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 0,
+          "score": 0.70307
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/ai_audit_engine.md",
+          "chunk_index": 4,
+          "score": 0.68826
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 31,
+          "score": 0.68766
+        },
+        {
+          "rank": 5,
+          "source": "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling.",
+          "chunk_index": 0,
+          "score": 0.68469
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "4.0",
+      "answer_fact": "4.0",
+      "retrieved_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 7 \u2014 client rating floor.",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/ai_audit_engine.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling."
+      ]
+    },
+    {
+      "id": "Q24",
+      "question": "What multiple of the client's average hourly rate does Rule 9 cap a bid at?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling."
+      ],
+      "key_fact": "2x",
+      "answer": "Rule 9 caps a bid at about 2x the client's demonstrated average hourly rate [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 4.4,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling.",
+          "chunk_index": 0,
+          "score": 0.84173
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 21,
+          "score": 0.70774
+        },
+        {
+          "rank": 3,
+          "source": "WORKING_KNOWLEDGE.md#Rule 11 \u2014 new-client exception.",
+          "chunk_index": 0,
+          "score": 0.70341
+        },
+        {
+          "rank": 4,
+          "source": "WORKING_KNOWLEDGE.md#Rule 12 \u2014 never quote the full programme to a first-time buyer.",
+          "chunk_index": 0,
+          "score": 0.69341
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+          "chunk_index": 3,
+          "score": 0.68998
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "2x",
+      "answer_fact": "2x",
+      "retrieved_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 9 \u2014 client rate ceiling.",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "WORKING_KNOWLEDGE.md#Rule 11 \u2014 new-client exception.",
+        "WORKING_KNOWLEDGE.md#Rule 12 \u2014 never quote the full programme to a first-time buyer.",
+        "MARK/Projects/Build_Ideas/authorized_api_migration.md"
+      ]
+    },
+    {
+      "id": "Q25",
+      "question": "How long is the edit window on a submitted proposal under Rule 10?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 10 \u2014 a submitted proposal is final."
+      ],
+      "key_fact": "6-hour edit window",
+      "answer": "The edit window on a submitted proposal is 6 hours, as stated in Rule 10 [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.8,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "WORKING_KNOWLEDGE.md#Rule 10 \u2014 a submitted proposal is final.",
+          "chunk_index": 0,
+          "score": 0.82039
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 16,
+          "score": 0.66511
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 15,
+          "score": 0.66006
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/utility_allocation_engine.md",
+          "chunk_index": 2,
+          "score": 0.65882
+        },
+        {
+          "rank": 5,
+          "source": "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won",
+          "chunk_index": 1,
+          "score": 0.65583
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "6-hour edit window",
+      "answer_fact": "6 hours",
+      "retrieved_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 10 \u2014 a submitted proposal is final.",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/utility_allocation_engine.md",
+        "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won"
+      ]
+    },
+    {
+      "id": "Q26",
+      "question": "How many conditions must hold before Rule 11 allows a bid to a zero-spend client?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 11 \u2014 new-client exception."
+      ],
+      "key_fact": "all four",
+      "answer": "According to Rule 11, all four conditions must hold: strong fit, field under 50 proposals with 0-1 interviews, price inside their stated budget, and behavioural rather than credential screening. [1]",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.1,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "WORKING_KNOWLEDGE.md#Rule 11 \u2014 new-client exception.",
+          "chunk_index": 0,
+          "score": 0.86191
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+          "chunk_index": 3,
+          "score": 0.71073
+        },
+        {
+          "rank": 3,
+          "source": "WORKING_KNOWLEDGE.md#Rule 12 \u2014 never quote the full programme to a first-time buyer.",
+          "chunk_index": 0,
+          "score": 0.70508
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 15,
+          "score": 0.68483
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 14,
+          "score": 0.67957
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "all four",
+      "answer_fact": "all four",
+      "retrieved_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 11 \u2014 new-client exception.",
+        "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+        "WORKING_KNOWLEDGE.md#Rule 12 \u2014 never quote the full programme to a first-time buyer.",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    },
+    {
+      "id": "Q27",
+      "question": "Which US law does Rule 13 cite against ticket-buying bots?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 13 \u2014 red lines: no anti-bot circumvention."
+      ],
+      "key_fact": "BOTS Act",
+      "answer": "Rule 13 cites the US BOTS Act of 2016 [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.9,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "WORKING_KNOWLEDGE.md#Rule 13 \u2014 red lines: no anti-bot circumvention.",
+          "chunk_index": 0,
+          "score": 0.82322
+        },
+        {
+          "rank": 2,
+          "source": "WORKING_KNOWLEDGE.md#Rule 14 \u2014 never expose your own bank details, identity papers or payment rails to a client \"test\".",
+          "chunk_index": 0,
+          "score": 0.65505
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/ai_audit_engine.md",
+          "chunk_index": 4,
+          "score": 0.65017
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+          "chunk_index": 0,
+          "score": 0.64676
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 44,
+          "score": 0.64324
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "BOTS Act",
+      "answer_fact": "BOTS Act",
+      "retrieved_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 13 \u2014 red lines: no anti-bot circumvention.",
+        "WORKING_KNOWLEDGE.md#Rule 14 \u2014 never expose your own bank details, identity papers or payment rails to a client \"test\".",
+        "MARK/Projects/Build_Ideas/ai_audit_engine.md",
+        "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    },
+    {
+      "id": "Q28",
+      "question": "What does Rule 14 forbid a freelancer to expose to a client test?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 14 \u2014 never expose your own bank details, identity papers or payment rails to a client \"test\"."
+      ],
+      "key_fact": "bank details",
+      "answer": "Rule 14 forbids a freelancer from exposing their own bank details, identity papers, or payment rails to a client test [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.8,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "WORKING_KNOWLEDGE.md#Rule 14 \u2014 never expose your own bank details, identity papers or payment rails to a client \"test\".",
+          "chunk_index": 0,
+          "score": 0.75628
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 13,
+          "score": 0.70257
+        },
+        {
+          "rank": 3,
+          "source": "WORKING_KNOWLEDGE.md#Rule 13 \u2014 red lines: no anti-bot circumvention.",
+          "chunk_index": 0,
+          "score": 0.6994
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+          "chunk_index": 1,
+          "score": 0.69681
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 38,
+          "score": 0.69497
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "bank details",
+      "answer_fact": "bank details",
+      "retrieved_sources": [
+        "WORKING_KNOWLEDGE.md#Rule 14 \u2014 never expose your own bank details, identity papers or payment rails to a client \"test\".",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "WORKING_KNOWLEDGE.md#Rule 13 \u2014 red lines: no anti-bot circumvention.",
+        "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    },
+    {
+      "id": "Q29",
+      "question": "How many tests does the mcp-validation-server project have?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#4. What is verified we can do"
+      ],
+      "key_fact": "139 tests",
+      "answer": "The `mcp-validation-server` project has 139 tests [2].",
+      "cited": [
+        2
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.2,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "MARK/Projects/Build_Ideas/content_approval_queue.md",
+          "chunk_index": 4,
+          "score": 0.77332
+        },
+        {
+          "rank": 2,
+          "source": "WORKING_KNOWLEDGE.md#4. What is verified we can do",
+          "chunk_index": 0,
+          "score": 0.6752
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 4,
+          "score": 0.66505
+        },
+        {
+          "rank": 4,
+          "source": "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won",
+          "chunk_index": 1,
+          "score": 0.66404
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 17,
+          "score": 0.6635
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "139 tests",
+      "answer_fact": "139 tests",
+      "retrieved_sources": [
+        "MARK/Projects/Build_Ideas/content_approval_queue.md",
+        "WORKING_KNOWLEDGE.md#4. What is verified we can do",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "WORKING_KNOWLEDGE.md#6. Process lessons, hard-won",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    },
+    {
+      "id": "Q30",
+      "question": "How many client records were in scope for the Playwright browser automation contract?",
+      "expected_sources": [
+        "WORKING_KNOWLEDGE.md#4. What is verified we can do"
+      ],
+      "key_fact": "3,159 clients",
+      "answer": "According to the document, the Playwright browser automation contract was for **3,159 clients in scope**. [1]",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieval_ms": 3.6,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "WORKING_KNOWLEDGE.md#4. What is verified we can do",
+          "chunk_index": 0,
+          "score": 0.76795
+        },
+        {
+          "rank": 2,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 18,
+          "score": 0.70799
+        },
+        {
+          "rank": 3,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 21,
+          "score": 0.68238
+        },
+        {
+          "rank": 4,
+          "source": "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+          "chunk_index": 0,
+          "score": 0.68034
+        },
+        {
+          "rank": 5,
+          "source": "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+          "chunk_index": 38,
+          "score": 0.67522
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "3,159 clients",
+      "answer_fact": "3,159 clients",
+      "retrieved_sources": [
+        "WORKING_KNOWLEDGE.md#4. What is verified we can do",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md",
+        "MARK/Projects/Build_Ideas/authorized_api_migration.md",
+        "MARK/Projects/Build_Ideas/validation_and_grounding_architecture.md"
+      ]
+    }
+  ],
+  "refusals": [
+    {
+      "id": "U01",
+      "question": "What is the annual revenue of the invoice approval client?",
+      "why": "The corpus describes the workflow and demo runs. No client financials appear.",
+      "answer": "NOT IN SOURCES",
+      "refused": true,
+      "correct": true,
+      "retrieved": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Options"
+      ]
+    },
+    {
+      "id": "U02",
+      "question": "What uptime SLA does the verified research pipeline guarantee?",
+      "why": "The corpus describes demo batches. No service level is stated.",
+      "answer": "NOT IN SOURCES",
+      "refused": true,
+      "correct": true,
+      "retrieved": [
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_research_pipeline.pdf",
+        "MARK/Projects/Build_Ideas/ai_lead_qualification.md",
+        "MARK/Projects/Build_Ideas/content_approval_queue.md",
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#The brief"
+      ]
+    },
+    {
+      "id": "U03",
+      "question": "How many invoices has the system processed in production?",
+      "why": "The corpus records 5 demo cases. No production volume appears.",
+      "answer": "NOT IN SOURCES",
+      "refused": true,
+      "correct": true,
+      "retrieved": [
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html#Evidence \u2014 from runs, not a mock-up",
+        "MARK/Projects/Job_Search/n8n_demo/sales/CASE_STUDY_Invoice_Approval_Gate.html",
+        "MARK/Projects/Job_Search/proposal_assets_2026-10-29/case_study_invoice_gate.pdf",
+        "MARK/Projects/Build_Ideas/china_dtc_model_and_1688.md",
+        "MARK/Projects/Job_Search/n8n_demo/research/CASE_STUDY_Verified_Research_Pipeline.html#Evidence from the demo run"
+      ]
+    }
+  ],
+  "environment": {
+    "date": "2026-10-31",
+    "python": "3.14.7",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "embedding_model": "nomic-embed-text",
+    "chat_model": "qwen2.5:7b",
+    "documents": 57,
+    "chunks_structural": 235,
+    "chunks_fixed": 190,
+    "refusal_token": "NOT IN SOURCES"
+  }
+}

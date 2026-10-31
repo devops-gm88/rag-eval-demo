@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.pgdata/
+.pgdata.log
+data/corpus/documents.jsonl
+data/corpus/ingest_summary.json
+.env
+data/corpus/manifest_detail.json

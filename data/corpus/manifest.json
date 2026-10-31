@@ -1,0 +1,10 @@
+{
+  "documents": 57,
+  "chars": 299259,
+  "by_kind": {
+    "html": 18,
+    "pdf": 2,
+    "md": 37
+  },
+  "corpus_sha256": "ee37fb6bf989146caf5e2a44dc5bbdcaa219dadbb3655efb8d1234e53d151e48"
+}
