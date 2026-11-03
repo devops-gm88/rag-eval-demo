@@ -37,7 +37,7 @@ embedded 10 questions
   ...
   DU2 PASS How many people work at the Halifax depot?
 queries: recall@5 8/8  citation 7/8  complete 8/8  passed 7/8  refusals 2/2
-demo passed every gate in evals/demo_gates.json (18.2s)
+demo passed every gate in evals/demo_gates.json (46.2s)
 wrote reports/demo_results.json
 ```
 
