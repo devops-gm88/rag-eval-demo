@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "built": "2026-11-03",
+  "description": "10-question demo set over the 13 synthetic documents in data/demo_corpus. 8 answerable, 2 that must be refused. Same schema as questions.json.",
+  "matching_rule": "key_fact or an alias appears in the answer after matching.normalise; citations must point at a chunk containing the fact.",
+  "answerable": [
+    {
+      "id": "D01",
+      "question": "What is the base rate per mile for a dry van?",
+      "expected_sources": ["demo_corpus/03-rate-card.md"],
+      "key_fact": "$2.45 per mile",
+      "aliases": ["2.45 per mile", "$2.45"]
+    },
+    {
+      "id": "D02",
+      "question": "How often does the tracking device send a position ping while the vehicle is moving?",
+      "expected_sources": ["demo_corpus/07-tracking-api.md"],
+      "key_fact": "every 2 minutes",
+      "aliases": ["every two minutes"]
+    },
+    {
+      "id": "D03",
+      "question": "What is the maximum liability per shipment on a cargo claim?",
+      "expected_sources": ["demo_corpus/09-claims-process.md"],
+      "key_fact": "$2,500 per shipment",
+      "aliases": ["2500 per shipment", "$2,500"]
+    },
+    {
+      "id": "D04",
+      "question": "How many consecutive temperature excursions quarantine a trailer?",
+      "expected_sources": ["demo_corpus/04-cold-chain.md"],
+      "key_fact": "three consecutive excursions",
+      "aliases": ["3 consecutive excursions", "three consecutive temperature excursions", "3 consecutive temperature excursions"]
+    },
+    {
+      "id": "D05",
+      "question": "How many dock doors does the main warehouse have?",
+      "expected_sources": ["demo_corpus/08-warehouse-operations.md"],
+      "key_fact": "22 dock doors",
+      "aliases": ["twenty-two dock doors"]
+    },
+    {
+      "id": "D06",
+      "question": "How long does a driver have to report a near miss?",
+      "expected_sources": ["demo_corpus/12-safety.md"],
+      "key_fact": "within 24 hours",
+      "aliases": ["24 hours"]
+    },
+    {
+      "id": "D07",
+      "question": "What share of local mileage was electric in 2025?",
+      "expected_sources": ["demo_corpus/10-sustainability.md"],
+      "key_fact": "38% of local mileage",
+      "aliases": ["38 percent of local mileage"]
+    },
+    {
+      "id": "D08",
+      "question": "What is the minimum commercial auto liability insurance a partner carrier must carry?",
+      "expected_sources": ["demo_corpus/13-vendor-approvals.md"],
+      "key_fact": "$2M",
+      "aliases": ["2 million", "$2 million"]
+    }
+  ],
+  "unanswerable": [
+    {
+      "id": "DU1",
+      "question": "What was Larkspur Freight's net profit in 2025?",
+      "why": "The corpus gives revenue only. It never gives profit."
+    },
+    {
+      "id": "DU2",
+      "question": "How many people work at the Halifax depot?",
+      "why": "The corpus lists 14 depots and total headcount, never a per-depot split or Halifax."
+    }
+  ]
+}

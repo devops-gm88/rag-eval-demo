@@ -13,6 +13,7 @@ help:
 	@echo "make ingest    chunk, embed and load both indexes"
 	@echo "make eval      run the 30-question eval over four configurations"
 	@echo "make report    render reports/eval.html"
+	@echo "make demo      run the 10-question demo on the synthetic corpus (no Postgres)"
 	@echo "make test      run the unit tests"
 	@echo "make clean     remove generated reports and the local cluster"
 
@@ -35,6 +36,9 @@ eval:
 report:
 	@$(ENV); $(PY) -m src.report
 
+demo:
+	@$(ENV); $(PY) -m src.demo
+
 test:
 	@$(ENV); $(PYTEST)
 
@@ -42,4 +46,4 @@ clean:
 	rm -f reports/eval_*.json reports/eval.html data/corpus/ingest_summary.json
 	@echo "kept the corpus and the database"
 
-.PHONY: help db db-stop corpus ingest eval report test clean
+.PHONY: help db db-stop corpus ingest eval report demo test clean

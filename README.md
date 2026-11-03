@@ -10,7 +10,44 @@ the refusals, and the failures.
 The bar was set before the run at 26 of 30 and 3 of 3. The baseline fails it, the improved
 configuration clears it.
 
+## Reproduce from a clean clone
+
+The full eval needs the private corpus and Postgres. A reviewer can run the same
+harness end to end on a published synthetic corpus, with no database:
+
+```bash
+python3 -m venv .venv && . .venv/bin/activate
+pip install -r requirements-dev.txt
+make demo
+```
+
+Prerequisites: Ollama running locally with `nomic-embed-text` and `qwen2.5:7b`
+(`ollama pull nomic-embed-text && ollama pull qwen2.5:7b`). `make demo` embeds
+the 13 synthetic documents in `data/demo_corpus/`, answers 10 questions (8
+answerable, 2 that must be refused), scores recall@5, citation correctness,
+completeness and refusal accuracy, writes `reports/demo_results.json`, and exits
+non-zero if a metric falls below its gate in `evals/demo_gates.json`.
+
+Expected output on this machine, 2026-11-03:
+
+```text
+13 documents -> 13 chunks
+embedded 10 questions
+  D01 PASS What is the base rate per mile for a dry van?
+  ...
+  DU2 PASS How many people work at the Halifax depot?
+queries: recall@5 8/8  citation 7/8  complete 8/8  passed 7/8  refusals 2/2
+demo passed every gate in evals/demo_gates.json (18.2s)
+wrote reports/demo_results.json
+```
+
+The one citation miss (D04) is the same failure the full eval records for Q09:
+the right answer with the wrong source number. The demo is the scaled-down
+harness; the full 30-question eval and its four committed reports are in
+`reports/`. It finishes in under five minutes from cold.
+
 ## What was run and what was not
+
 
 **Run on this machine:**
 
@@ -27,6 +64,7 @@ configuration clears it.
 **Not run:**
 
 - No cloud model, no paid API. Everything is local and offline.
+- The demo corpus in `data/demo_corpus/` is synthetic and published so the harness can run without the private corpus.
 - The 57-document corpus is **not published**: it contains internal build specs and commercial
   notes. The repository ships the harness, the questions, the scoring rules and the reports.
   `make corpus` rebuilds it from a configured source tree.
@@ -133,6 +171,7 @@ ollama serve
 | `make ingest` | chunk, embed, load `docs` and `docs_baseline` |
 | `make eval` | run the four configurations |
 | `make report` | render `reports/eval.html` |
+| `make demo` | 10-question demo on the synthetic corpus, no Postgres |
 | `make test` | unit tests |
 
 ## Layout
@@ -150,6 +189,8 @@ src/
   report.py      readable HTML report
   ingest.py      load pipeline
 evals/questions.json   30 answerable and 3 unanswerable questions
+evals/demo_questions.json  10 demo questions; evals/demo_gates.json
+ data/demo_corpus/      13 synthetic documents (README says so)
 reports/               eval_baseline.json, eval_fixed_hybrid.json,
                        eval_structural_vector.json, eval_improved.json, eval.html
 data/corpus/           documents.jsonl (private, gitignored) and manifest.json

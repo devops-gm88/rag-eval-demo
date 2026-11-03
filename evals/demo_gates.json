@@ -1,0 +1,8 @@
+{
+  "comment": "Minimum totals for reports/demo_results.json. make demo exits 1 when a metric falls below its gate. Each gate sits one point below the measured 2026-11-03 run on this machine, so a real regression fails and model noise does not.",
+  "recall_at_5": 7,
+  "citation_correct": 6,
+  "answer_complete": 7,
+  "passed": 6,
+  "refusals_correct": 2
+}

@@ -1,0 +1,531 @@
+{
+  "suite": "demo",
+  "date": "2026-11-03",
+  "environment": {
+    "python": "3.14.7",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "embedding_model": "nomic-embed-text",
+    "chat_model": "qwen2.5:7b",
+    "documents": 13,
+    "chunks": 13,
+    "top_k": 5,
+    "refusal_token": "NOT IN SOURCES"
+  },
+  "gates": {
+    "comment": "Minimum totals for reports/demo_results.json. make demo exits 1 when a metric falls below its gate. Set below the measured 2026-11-03 run on this machine, not above it.",
+    "recall_at_5": 8,
+    "citation_correct": 7,
+    "answer_complete": 7,
+    "passed": 6,
+    "refusals_correct": 2
+  },
+  "gate_failures": [],
+  "totals": {
+    "recall_at_5": 8,
+    "citation_correct": 7,
+    "answer_complete": 8,
+    "passed": 7,
+    "refusals_correct": 2,
+    "questions": 8,
+    "unanswerable": 2
+  },
+  "wall_seconds": 18.2,
+  "rows": [
+    {
+      "id": "D01",
+      "question": "What is the base rate per mile for a dry van?",
+      "expected_sources": [
+        "demo_corpus/03-rate-card.md"
+      ],
+      "answer": "The base rate for a dry van is $2.45 per mile [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "demo_corpus/03-rate-card.md",
+          "chunk_index": 0,
+          "score": 0.83159
+        },
+        {
+          "rank": 2,
+          "source": "demo_corpus/10-sustainability.md",
+          "chunk_index": 0,
+          "score": 0.61515
+        },
+        {
+          "rank": 3,
+          "source": "demo_corpus/12-safety.md",
+          "chunk_index": 0,
+          "score": 0.58833
+        },
+        {
+          "rank": 4,
+          "source": "demo_corpus/13-vendor-approvals.md",
+          "chunk_index": 0,
+          "score": 0.57703
+        },
+        {
+          "rank": 5,
+          "source": "demo_corpus/11-billing.md",
+          "chunk_index": 0,
+          "score": 0.56773
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "$2.45 per mile",
+      "answer_fact": "$2.45 per mile",
+      "retrieved_sources": [
+        "demo_corpus/03-rate-card.md",
+        "demo_corpus/10-sustainability.md",
+        "demo_corpus/12-safety.md",
+        "demo_corpus/13-vendor-approvals.md",
+        "demo_corpus/11-billing.md"
+      ]
+    },
+    {
+      "id": "D02",
+      "question": "How often does the tracking device send a position ping while the vehicle is moving?",
+      "expected_sources": [
+        "demo_corpus/07-tracking-api.md"
+      ],
+      "answer": "The tracking device sends a position ping every 2 minutes while the vehicle is moving [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "demo_corpus/07-tracking-api.md",
+          "chunk_index": 0,
+          "score": 0.81487
+        },
+        {
+          "rank": 2,
+          "source": "demo_corpus/12-safety.md",
+          "chunk_index": 0,
+          "score": 0.64471
+        },
+        {
+          "rank": 3,
+          "source": "demo_corpus/06-incident-response.md",
+          "chunk_index": 0,
+          "score": 0.61365
+        },
+        {
+          "rank": 4,
+          "source": "demo_corpus/05-driver-onboarding.md",
+          "chunk_index": 0,
+          "score": 0.60372
+        },
+        {
+          "rank": 5,
+          "source": "demo_corpus/02-dispatch-policy.md",
+          "chunk_index": 0,
+          "score": 0.57717
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "every 2 minutes",
+      "answer_fact": "every 2 minutes",
+      "retrieved_sources": [
+        "demo_corpus/07-tracking-api.md",
+        "demo_corpus/12-safety.md",
+        "demo_corpus/06-incident-response.md",
+        "demo_corpus/05-driver-onboarding.md",
+        "demo_corpus/02-dispatch-policy.md"
+      ]
+    },
+    {
+      "id": "D03",
+      "question": "What is the maximum liability per shipment on a cargo claim?",
+      "expected_sources": [
+        "demo_corpus/09-claims-process.md"
+      ],
+      "answer": "The maximum liability per shipment on a cargo claim is $2,500 unless a higher value is declared and insured before pickup [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "demo_corpus/09-claims-process.md",
+          "chunk_index": 0,
+          "score": 0.84443
+        },
+        {
+          "rank": 2,
+          "source": "demo_corpus/03-rate-card.md",
+          "chunk_index": 0,
+          "score": 0.65911
+        },
+        {
+          "rank": 3,
+          "source": "demo_corpus/13-vendor-approvals.md",
+          "chunk_index": 0,
+          "score": 0.64153
+        },
+        {
+          "rank": 4,
+          "source": "demo_corpus/01-company-overview.md",
+          "chunk_index": 0,
+          "score": 0.61983
+        },
+        {
+          "rank": 5,
+          "source": "demo_corpus/04-cold-chain.md",
+          "chunk_index": 0,
+          "score": 0.61961
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "$2,500 per shipment",
+      "answer_fact": "$2,500",
+      "retrieved_sources": [
+        "demo_corpus/09-claims-process.md",
+        "demo_corpus/03-rate-card.md",
+        "demo_corpus/13-vendor-approvals.md",
+        "demo_corpus/01-company-overview.md",
+        "demo_corpus/04-cold-chain.md"
+      ]
+    },
+    {
+      "id": "D04",
+      "question": "How many consecutive temperature excursions quarantine a trailer?",
+      "expected_sources": [
+        "demo_corpus/04-cold-chain.md"
+      ],
+      "answer": "Three consecutive temperature excursions quarantine the trailer [3].",
+      "cited": [
+        3
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "demo_corpus/04-cold-chain.md",
+          "chunk_index": 0,
+          "score": 0.71888
+        },
+        {
+          "rank": 2,
+          "source": "demo_corpus/12-safety.md",
+          "chunk_index": 0,
+          "score": 0.60021
+        },
+        {
+          "rank": 3,
+          "source": "demo_corpus/08-warehouse-operations.md",
+          "chunk_index": 0,
+          "score": 0.5942
+        },
+        {
+          "rank": 4,
+          "source": "demo_corpus/06-incident-response.md",
+          "chunk_index": 0,
+          "score": 0.57393
+        },
+        {
+          "rank": 5,
+          "source": "demo_corpus/03-rate-card.md",
+          "chunk_index": 0,
+          "score": 0.56653
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": false,
+      "answer_complete": true,
+      "passed": false,
+      "citation_fact": null,
+      "answer_fact": "three consecutive temperature excursions",
+      "retrieved_sources": [
+        "demo_corpus/04-cold-chain.md",
+        "demo_corpus/12-safety.md",
+        "demo_corpus/08-warehouse-operations.md",
+        "demo_corpus/06-incident-response.md",
+        "demo_corpus/03-rate-card.md"
+      ]
+    },
+    {
+      "id": "D05",
+      "question": "How many dock doors does the main warehouse have?",
+      "expected_sources": [
+        "demo_corpus/08-warehouse-operations.md"
+      ],
+      "answer": "The main warehouse has 22 dock doors [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "demo_corpus/08-warehouse-operations.md",
+          "chunk_index": 0,
+          "score": 0.80662
+        },
+        {
+          "rank": 2,
+          "source": "demo_corpus/01-company-overview.md",
+          "chunk_index": 0,
+          "score": 0.52384
+        },
+        {
+          "rank": 3,
+          "source": "demo_corpus/09-claims-process.md",
+          "chunk_index": 0,
+          "score": 0.52156
+        },
+        {
+          "rank": 4,
+          "source": "demo_corpus/10-sustainability.md",
+          "chunk_index": 0,
+          "score": 0.50723
+        },
+        {
+          "rank": 5,
+          "source": "demo_corpus/02-dispatch-policy.md",
+          "chunk_index": 0,
+          "score": 0.50612
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "22 dock doors",
+      "answer_fact": "22 dock doors",
+      "retrieved_sources": [
+        "demo_corpus/08-warehouse-operations.md",
+        "demo_corpus/01-company-overview.md",
+        "demo_corpus/09-claims-process.md",
+        "demo_corpus/10-sustainability.md",
+        "demo_corpus/02-dispatch-policy.md"
+      ]
+    },
+    {
+      "id": "D06",
+      "question": "How long does a driver have to report a near miss?",
+      "expected_sources": [
+        "demo_corpus/12-safety.md"
+      ],
+      "answer": "A near miss must be reported within 24 hours of the event [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "demo_corpus/12-safety.md",
+          "chunk_index": 0,
+          "score": 0.80804
+        },
+        {
+          "rank": 2,
+          "source": "demo_corpus/06-incident-response.md",
+          "chunk_index": 0,
+          "score": 0.68419
+        },
+        {
+          "rank": 3,
+          "source": "demo_corpus/05-driver-onboarding.md",
+          "chunk_index": 0,
+          "score": 0.65454
+        },
+        {
+          "rank": 4,
+          "source": "demo_corpus/02-dispatch-policy.md",
+          "chunk_index": 0,
+          "score": 0.65302
+        },
+        {
+          "rank": 5,
+          "source": "demo_corpus/09-claims-process.md",
+          "chunk_index": 0,
+          "score": 0.62717
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "within 24 hours",
+      "answer_fact": "within 24 hours",
+      "retrieved_sources": [
+        "demo_corpus/12-safety.md",
+        "demo_corpus/06-incident-response.md",
+        "demo_corpus/05-driver-onboarding.md",
+        "demo_corpus/02-dispatch-policy.md",
+        "demo_corpus/09-claims-process.md"
+      ]
+    },
+    {
+      "id": "D07",
+      "question": "What share of local mileage was electric in 2025?",
+      "expected_sources": [
+        "demo_corpus/10-sustainability.md"
+      ],
+      "answer": "In 2025, 38% of local mileage was electric [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "demo_corpus/10-sustainability.md",
+          "chunk_index": 0,
+          "score": 0.77582
+        },
+        {
+          "rank": 2,
+          "source": "demo_corpus/03-rate-card.md",
+          "chunk_index": 0,
+          "score": 0.59266
+        },
+        {
+          "rank": 3,
+          "source": "demo_corpus/12-safety.md",
+          "chunk_index": 0,
+          "score": 0.55346
+        },
+        {
+          "rank": 4,
+          "source": "demo_corpus/11-billing.md",
+          "chunk_index": 0,
+          "score": 0.53413
+        },
+        {
+          "rank": 5,
+          "source": "demo_corpus/13-vendor-approvals.md",
+          "chunk_index": 0,
+          "score": 0.53165
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "38% of local mileage",
+      "answer_fact": "38% of local mileage",
+      "retrieved_sources": [
+        "demo_corpus/10-sustainability.md",
+        "demo_corpus/03-rate-card.md",
+        "demo_corpus/12-safety.md",
+        "demo_corpus/11-billing.md",
+        "demo_corpus/13-vendor-approvals.md"
+      ]
+    },
+    {
+      "id": "D08",
+      "question": "What is the minimum commercial auto liability insurance a partner carrier must carry?",
+      "expected_sources": [
+        "demo_corpus/13-vendor-approvals.md"
+      ],
+      "answer": "A partner carrier must carry a minimum of $2M in commercial auto liability insurance [1].",
+      "cited": [
+        1
+      ],
+      "invalid_citations": [],
+      "refused": false,
+      "retrieved": [
+        {
+          "rank": 1,
+          "source": "demo_corpus/13-vendor-approvals.md",
+          "chunk_index": 0,
+          "score": 0.77257
+        },
+        {
+          "rank": 2,
+          "source": "demo_corpus/09-claims-process.md",
+          "chunk_index": 0,
+          "score": 0.64704
+        },
+        {
+          "rank": 3,
+          "source": "demo_corpus/03-rate-card.md",
+          "chunk_index": 0,
+          "score": 0.64502
+        },
+        {
+          "rank": 4,
+          "source": "demo_corpus/12-safety.md",
+          "chunk_index": 0,
+          "score": 0.63238
+        },
+        {
+          "rank": 5,
+          "source": "demo_corpus/05-driver-onboarding.md",
+          "chunk_index": 0,
+          "score": 0.60055
+        }
+      ],
+      "recall_at_5": true,
+      "citation_correct": true,
+      "answer_complete": true,
+      "passed": true,
+      "citation_fact": "$2M",
+      "answer_fact": "$2M",
+      "retrieved_sources": [
+        "demo_corpus/13-vendor-approvals.md",
+        "demo_corpus/09-claims-process.md",
+        "demo_corpus/03-rate-card.md",
+        "demo_corpus/12-safety.md",
+        "demo_corpus/05-driver-onboarding.md"
+      ]
+    }
+  ],
+  "refusals": [
+    {
+      "id": "DU1",
+      "question": "What was Larkspur Freight's net profit in 2025?",
+      "why": "The corpus gives revenue only. It never gives profit.",
+      "answer": "NOT IN SOURCES",
+      "refused": true,
+      "correct": true,
+      "retrieved": [
+        "demo_corpus/01-company-overview.md",
+        "demo_corpus/10-sustainability.md",
+        "demo_corpus/04-cold-chain.md",
+        "demo_corpus/05-driver-onboarding.md",
+        "demo_corpus/03-rate-card.md"
+      ]
+    },
+    {
+      "id": "DU2",
+      "question": "How many people work at the Halifax depot?",
+      "why": "The corpus lists 14 depots and total headcount, never a per-depot split or Halifax.",
+      "answer": "NOT IN SOURCES",
+      "refused": true,
+      "correct": true,
+      "retrieved": [
+        "demo_corpus/01-company-overview.md",
+        "demo_corpus/08-warehouse-operations.md",
+        "demo_corpus/10-sustainability.md",
+        "demo_corpus/02-dispatch-policy.md",
+        "demo_corpus/05-driver-onboarding.md"
+      ]
+    }
+  ]
+}
